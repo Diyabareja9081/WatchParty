@@ -1,0 +1,9 @@
+const rooms = new Map();
+const db = require('../db/database');
+const Room = require('./Room');
+function saveRoom(room) { const p=room.playback; const index=db.rooms.findIndex(r=>r.room_id===room.roomId); const row={room_id:room.roomId,host_user_id:room.hostUserId,video_id:p.videoId,play_state:p.playState,current_time:p.currentTime,last_updated:p.lastUpdated,created_at:room.createdAt}; if(index>=0)db.rooms[index]=row;else db.rooms.push(row); db.messages[room.roomId]=room.messages; db.save(); }
+function loadRoom(roomId) { if(rooms.has(roomId))return rooms.get(roomId); const row=db.rooms.find(r=>r.room_id===roomId); if(!row)return null; const room=new Room(row.room_id,row.video_id,{hostUserId:row.host_user_id,videoId:row.video_id,playState:row.play_state,currentTime:row.current_time,lastUpdated:row.last_updated,createdAt:row.created_at}); room.messages=db.messages[roomId]||[]; room.persistedRoles=new Map(db.roomMembers.filter(m=>m.room_id===roomId).map(m=>[m.user_id,m.role])); rooms.set(roomId,room); return room; }
+function saveMember(roomId,userId,role){const row=db.roomMembers.find(m=>m.room_id===roomId&&m.user_id===userId);if(row)row.role=role;else db.roomMembers.push({room_id:roomId,user_id:userId,role});db.save();}
+function removeMember(roomId,userId){for(let i=db.roomMembers.length-1;i>=0;i--) if(db.roomMembers[i].room_id===roomId&&db.roomMembers[i].user_id===userId) db.roomMembers.splice(i,1);db.save();}
+function deleteRoom(roomId){rooms.delete(roomId);for(let i=db.rooms.length-1;i>=0;i--) if(db.rooms[i].room_id===roomId) db.rooms.splice(i,1); for(let i=db.roomMembers.length-1;i>=0;i--) if(db.roomMembers[i].room_id===roomId) db.roomMembers.splice(i,1);delete db.messages[roomId];db.save();}
+module.exports=rooms; module.exports.saveRoom=saveRoom; module.exports.loadRoom=loadRoom; module.exports.saveMember=saveMember; module.exports.removeMember=removeMember; module.exports.deleteRoom=deleteRoom;

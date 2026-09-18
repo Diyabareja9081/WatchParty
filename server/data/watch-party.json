@@ -1,0 +1,97 @@
+{
+  "users": [
+    {
+      "id": "ac16b4c3-76bd-41d4-af01-ec86add86f92",
+      "username": "diya",
+      "password_hash": "6ecd64e7ba3fbd3ac855ebdd0082738f:f0b10949678a171cabfd7c2aae65220e95de1be44f3ddd6c309ab962dbc8707a",
+      "created_at": 1789753753084
+    },
+    {
+      "id": "385727b6-39c7-465a-9f7a-97fbc9267d9d",
+      "username": "dhruv",
+      "password_hash": "a1414a7e4740517457c0e5da215fbc1f:c1f88b2a2e2f7ff0800927e85990067e481d3515de502c0a46a5efc773ae1629",
+      "created_at": 1789755418965
+    }
+  ],
+  "rooms": [
+    {
+      "room_id": "MJRYOJ",
+      "host_user_id": "ac16b4c3-76bd-41d4-af01-ec86add86f92",
+      "video_id": "",
+      "play_state": "paused",
+      "current_time": 0,
+      "last_updated": 1789753758981,
+      "created_at": 1789753758981
+    },
+    {
+      "room_id": "NZQ6J0",
+      "host_user_id": "ac16b4c3-76bd-41d4-af01-ec86add86f92",
+      "video_id": "",
+      "play_state": "paused",
+      "current_time": 0,
+      "last_updated": 1789753787132,
+      "created_at": 1789753787132
+    },
+    {
+      "room_id": "19AU71",
+      "host_user_id": "ac16b4c3-76bd-41d4-af01-ec86add86f92",
+      "video_id": "",
+      "play_state": "paused",
+      "current_time": 0,
+      "last_updated": 1789754082881,
+      "created_at": 1789754082881
+    },
+    {
+      "room_id": "P42LMZ",
+      "host_user_id": "385727b6-39c7-465a-9f7a-97fbc9267d9d",
+      "video_id": "",
+      "play_state": "paused",
+      "current_time": 0,
+      "last_updated": 1789755423039,
+      "created_at": 1789755423039
+    },
+    {
+      "room_id": "PJ7F3P",
+      "host_user_id": "385727b6-39c7-465a-9f7a-97fbc9267d9d",
+      "video_id": "XDyoqcvgYi8",
+      "play_state": "playing",
+      "current_time": 0,
+      "last_updated": 1789755649073,
+      "created_at": 1789755543453
+    }
+  ],
+  "roomMembers": [
+    {
+      "room_id": "MJRYOJ",
+      "user_id": "ac16b4c3-76bd-41d4-af01-ec86add86f92",
+      "role": "Host"
+    },
+    {
+      "room_id": "NZQ6J0",
+      "user_id": "ac16b4c3-76bd-41d4-af01-ec86add86f92",
+      "role": "Host"
+    },
+    {
+      "room_id": "19AU71",
+      "user_id": "ac16b4c3-76bd-41d4-af01-ec86add86f92",
+      "role": "Host"
+    },
+    {
+      "room_id": "P42LMZ",
+      "user_id": "385727b6-39c7-465a-9f7a-97fbc9267d9d",
+      "role": "Host"
+    },
+    {
+      "room_id": "PJ7F3P",
+      "user_id": "385727b6-39c7-465a-9f7a-97fbc9267d9d",
+      "role": "Host"
+    }
+  ],
+  "messages": {
+    "MJRYOJ": [],
+    "NZQ6J0": [],
+    "19AU71": [],
+    "P42LMZ": [],
+    "PJ7F3P": []
+  }
+}
